@@ -3,38 +3,29 @@ package router
 import (
 	"net/http"
 	"github.com/gin-gonic/gin"
+	"github.com/reis-jean/GooppotunitesAPI.git/handler"
   )
 
-func InitializeRoutes(router *gin.Engine) {
+//   funções deve ser com letra maiuscula para serem exportadas
+// se forem minusculas só podem ser acessadas dentro do mesmo pacote
+func initializeRoutes(router *gin.Engine) {
 	
 	v1 := router.Group("/api/v1")
     {	
 		//show opening
-        v1.GET("/opening", func(c *gin.Context) {
-            c.JSON(http.StatusOK, gin.H{
-                "message": "pong",
-            })
-        })
-        v1.POST("/opening", func(c *gin.Context) {
-            c.JSON(http.StatusOK, gin.H{
-                "message": "pong",
-            })
-        })
-        v1.DELETE("/opening", func(c *gin.Context) {
-            c.JSON(http.StatusOK, gin.H{
-                "message": "pong",
-            })
-        })
-        v1.PUT("/opening", func(c *gin.Context) {
-            c.JSON(http.StatusOK, gin.H{
-                "message": "pong",
-            })
-        })
-        v1.GET("/openings", func(c *gin.Context) {
-            c.JSON(http.StatusOK, gin.H{
-                "message": "pong",
-            })
-        })
+        v1.GET("/opening", handler.ShowOpeningHandler)
+
+		//create opening
+        v1.POST("/opening", handler.CreateOpeningHandler)
+
+		//delete opening
+        v1.DELETE("/opening", handler.DeleteOpeningHandler)
+
+		//update opening
+        v1.PUT("/opening", handler.UpdateOpeningHandler)
+
+		//list openings
+        v1.GET("/openings", handler.ListOpeningHandler)
     }
 
 
