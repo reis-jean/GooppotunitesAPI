@@ -1,0 +1,10 @@
+
+Dar run no go
+    go run main.go
+
+
+gin golang é uma lib para APi rest no Go
+
+Para buscar resurso que esta usando e retirar recursos que não esta usando:
+    go mod tidy 
+
