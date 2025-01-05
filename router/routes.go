@@ -1,7 +1,6 @@
 package router
 
 import (
-	"net/http"
 	"github.com/gin-gonic/gin"
 	"github.com/reis-jean/GooppotunitesAPI.git/handler"
   )
@@ -14,16 +13,12 @@ func initializeRoutes(router *gin.Engine) {
     {	
 		//show opening
         v1.GET("/opening", handler.ShowOpeningHandler)
-
 		//create opening
         v1.POST("/opening", handler.CreateOpeningHandler)
-
 		//delete opening
         v1.DELETE("/opening", handler.DeleteOpeningHandler)
-
 		//update opening
         v1.PUT("/opening", handler.UpdateOpeningHandler)
-
 		//list openings
         v1.GET("/openings", handler.ListOpeningHandler)
     }
