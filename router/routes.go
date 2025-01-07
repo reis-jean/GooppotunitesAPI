@@ -8,6 +8,10 @@ import (
 //   funções deve ser com letra maiuscula para serem exportadas
 // se forem minusculas só podem ser acessadas dentro do mesmo pacote
 func initializeRoutes(router *gin.Engine) {
+
+	//iniciar  o handler
+
+	handler.InitializeHandler()
 	
 	v1 := router.Group("/api/v1")
     {	
