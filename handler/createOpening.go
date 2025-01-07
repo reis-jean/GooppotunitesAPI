@@ -24,7 +24,9 @@ func CreateOpeningHandler(c *gin.Context) {
 	opening := schemas.Opening{
 		Role: request.Role,
 		Company: request.Company,
+		Location: request.Location,
 		Remote: *request.Remote,
+		Link: request.Link,
 		Salary: request.Salary,
 	}
 
